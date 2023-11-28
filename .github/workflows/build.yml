@@ -1,0 +1,11 @@
+name: kpatch
+on: push
+jobs:
+  build_pkg:
+    uses: gardenlinux/package-build/.github/workflows/build_pkg.yml@main
+    with:
+      source: git+https://github.com/dynup/kpatch.git
+      debian_source: native
+      git_filter: v[0-9\.]*$
+      git_tag_match: v([0-9\-]*)
+

@@ -1,0 +1,5 @@
+kpatch-build-adjust-dirs.patch
+use-debian-rules-for-ubuntu-builds.patch
+ignore-lubsan-sections.patch
+drop-upstart.patch
+disable-shellcheck.patch

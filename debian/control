@@ -1,0 +1,36 @@
+Source: kpatch
+Section: kernel
+Priority: optional
+Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
+Uploaders: Dimitri John Ledkov <dimitri.ledkov@canonical.com>
+Build-Depends: debhelper-compat (= 13),
+ libelf-dev, shellcheck, 
+ g++-12 [ppc64el], gcc-12-plugin-dev [ppc64el],
+ g++-11 [ppc64el], gcc-11-plugin-dev [ppc64el],
+Standards-Version: 4.6.1.0
+Homepage: https://github.com/dynup/kpatch
+
+Package: kpatch
+Architecture: amd64 ppc64el s390x
+Replaces: kpatch-dkms
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Runtime tools for Kpatch
+ kpatch is a Linux dynamic kernel patching tool which allows you to patch a
+ running kernel without rebooting or restarting any processes.  It enables
+ sysadmins to apply critical security patches to the kernel immediately, without
+ having to wait for long-running tasks to complete, users to log off, or
+ for scheduled reboot windows.  It gives more control over up-time without
+ sacrificing security or stability.
+
+Package: kpatch-build
+Architecture: amd64 ppc64el s390x
+Depends: ${shlibs:Depends}, ${misc:Depends}, dpkg-dev, debhelper (>= 10),
+ cpio, kernel-wedge, kmod, makedumpfile, libelf-dev, devscripts, pahole,
+ libnewt-dev, libiberty-dev, rsync, libdw-dev, libpci-dev, pkg-config, flex,
+ bison, openssl, libssl-dev, libaudit-dev, bc, python3-dev, gawk,
+ libudev-dev, autoconf, automake, libtool, uuid-dev, xmlto, docbook-utils,
+ ghostscript, transfig, bzip2, sharutils, asciidoc, elfutils
+Suggests: ccache
+Description: Build Tools for Kpatch and Livepatch
+ kpatch-build is a tool that can build both kpatch and livepatch modules from
+ a given patch.

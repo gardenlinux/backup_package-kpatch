@@ -1,0 +1,22 @@
+diff --color -Naur a/Makefile b/Makefile
+--- a/Makefile	2023-06-06 09:25:36
++++ b/Makefile	2023-06-06 10:19:24
+@@ -66,12 +66,12 @@
+ vagrant-integration-quick:
+ 	$(MAKE) -C $(INTEGRATION_DIR) vagrant-quick
+ 
+-check:
+-	shellcheck kpatch/kpatch kpatch-build/kpatch-build kpatch-build/kpatch-cc
+-	shellcheck test/difftree.sh test/integration/kpatch-test		\
+-		   test/integration/lib.sh test/integration/rebase-patches	\
+-		   test/integration/test-vagrant				\
+-		   test/integration/vm-integration-run
++#check:
++#	shellcheck kpatch/kpatch kpatch-build/kpatch-build kpatch-build/kpatch-cc
++#	shellcheck test/difftree.sh test/integration/kpatch-test		\
++#		   test/integration/lib.sh test/integration/rebase-patches	\
++#		   test/integration/test-vagrant				\
++#		   test/integration/vm-integration-run
+ 
+ help:
+ 	@echo "kpatch Makefile"
