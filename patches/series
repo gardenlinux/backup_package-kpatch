@@ -3,3 +3,4 @@ use-debian-rules-for-ubuntu-builds.patch
 ignore-lubsan-sections.patch
 drop-upstart.patch
 disable-shellcheck.patch
+use-source-format-1.0-to-apply-our-patches.patch
